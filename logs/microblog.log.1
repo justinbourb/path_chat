@@ -1,0 +1,125 @@
+2018-02-07 20:30:24,760 ERROR: Exception on /index [GET] [in /home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask/app.py:1560]
+Traceback (most recent call last):
+  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask/app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask/app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask_login/utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "/home/jb/git_local/path_chat/app/routes.py", line 42, in index
+    if posts.has_next else None
+NameError: name 'posts' is not defined
+2018-02-07 20:30:26,976 ERROR: Exception on /index [GET] [in /home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask/app.py:1560]
+Traceback (most recent call last):
+  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask/app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask/app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask_login/utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "/home/jb/git_local/path_chat/app/routes.py", line 42, in index
+    if posts.has_next else None
+NameError: name 'posts' is not defined
+2018-02-07 20:30:49,374 INFO: Microblog startup [in /home/jb/git_local/path_chat/app/__init__.py:52]
+2018-02-07 20:33:48,288 INFO: Microblog startup [in /home/jb/git_local/path_chat/app/__init__.py:52]
+2018-02-07 20:34:42,553 INFO: Microblog startup [in /home/jb/git_local/path_chat/app/__init__.py:52]
+2018-02-07 20:35:02,571 INFO: Microblog startup [in /home/jb/git_local/path_chat/app/__init__.py:52]
+2018-02-07 20:35:05,224 ERROR: Exception on /user/ [GET] [in /home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask/app.py:1560]
+Traceback (most recent call last):
+  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask/app.py", line 1590, in dispatch_request
+    self.raise_routing_exception(req)
+  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask/app.py", line 1573, in raise_routing_exception
+    raise request.routing_exception
+  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask/ctx.py", line 294, in match_request
+    self.url_adapter.match(return_rule=True)
+  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/werkzeug/routing.py", line 1573, in match
+    raise NotFound()
+werkzeug.exceptions.NotFound: 404 Not Found: The requested URL was not found on the server.  If you entered the URL manually please check your spelling and try again.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask/app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask/app.py", line 1512, in handle_user_exception
+    return self.handle_http_exception(e)
+  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask/app.py", line 1471, in handle_http_exception
+    return handler(e)
+  File "/home/jb/git_local/path_chat/app/errors.py", line 7, in not_found_error
+    return render_template('404.html'), 404
+  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask/templating.py", line 134, in render_template
+    context, ctx.app)
+  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask/templating.py", line 116, in _render
+    rv = template.render(context)
+  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/jinja2/environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/jinja2/environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/jinja2/_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "/home/jb/git_local/path_chat/app/templates/404.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "/home/jb/git_local/path_chat/app/templates/base.html", line 1, in top-level template code
+    {% extends 'bootstrap/base.html' %}
+  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 1, in top-level template code
+    {% block doc -%}
+  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 4, in block "doc"
+    {%- block html %}
+  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 20, in block "html"
+    {% block body -%}
+  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 21, in block "body"
+    {% block navbar %}
+  File "/home/jb/git_local/path_chat/app/templates/base.html", line 28, in block "navbar"
+    <li><a href="{{ url_for('user', username=current_user.username) }}">{{ _('Profile') }}</a></li>
+  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask/helpers.py", line 333, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask/app.py", line 1805, in handle_url_build_error
+    reraise(exc_type, exc_value, tb)
+  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask/helpers.py", line 323, in url_for
+    force_external=external)
+  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/werkzeug/routing.py", line 1768, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.BuildError: Could not build url for endpoint 'user' with values ['username']. Did you forget to specify values ['email']?
+2018-02-07 20:39:34,271 INFO: Microblog startup [in /home/jb/git_local/path_chat/app/__init__.py:52]
+2018-02-07 20:42:43,797 INFO: Microblog startup [in /home/jb/git_local/path_chat/app/__init__.py:52]
+2018-02-07 20:42:50,400 ERROR: Exception on /index [GET] [in /home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask/app.py:1560]
+Traceback (most recent call last):
+  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask/app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask/app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask_login/utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "/home/jb/git_local/path_chat/app/routes.py", line 42, in index
+    if posts.has_next else None
+NameError: name 'posts' is not defined
