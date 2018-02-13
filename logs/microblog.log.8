@@ -1,4 +1,47 @@
-2018-02-07 20:42:55,041 ERROR: Exception on /user [GET] [in /home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask/app.py:1560]
+2018-02-06 20:15:31,693 INFO: Microblog startup [in /home/jb/git_local/path_chat/app/__init__.py:52]
+2018-02-06 20:16:00,813 INFO: Microblog startup [in /home/jb/git_local/path_chat/app/__init__.py:52]
+2018-02-06 20:26:49,023 INFO: Microblog startup [in /home/jb/git_local/path_chat/app/__init__.py:52]
+2018-02-06 20:27:50,896 INFO: Microblog startup [in /home/jb/git_local/path_chat/app/__init__.py:52]
+2018-02-06 20:28:16,526 INFO: Microblog startup [in /home/jb/git_local/path_chat/app/__init__.py:52]
+2018-02-06 20:29:44,150 INFO: Microblog startup [in /home/jb/git_local/path_chat/app/__init__.py:52]
+2018-02-06 20:29:49,551 INFO: Microblog startup [in /home/jb/git_local/path_chat/app/__init__.py:52]
+2018-02-06 20:30:22,675 INFO: Microblog startup [in /home/jb/git_local/path_chat/app/__init__.py:52]
+2018-02-06 20:34:10,707 INFO: Microblog startup [in /home/jb/git_local/path_chat/app/__init__.py:52]
+2018-02-06 20:34:13,359 INFO: Microblog startup [in /home/jb/git_local/path_chat/app/__init__.py:52]
+2018-02-06 20:55:01,978 INFO: Microblog startup [in /home/jb/git_local/path_chat/app/__init__.py:52]
+2018-02-07 14:39:50,412 INFO: Microblog startup [in /home/jb/git_local/path_chat/app/__init__.py:52]
+2018-02-07 14:40:31,847 ERROR: Exception on /register [GET] [in /home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask/app.py:1560]
+Traceback (most recent call last):
+  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask/app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask/app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/jb/git_local/path_chat/app/routes.py", line 90, in register
+    form = RegistrationForm()
+  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/wtforms/form.py", line 212, in __call__
+    return type.__call__(cls, *args, **kwargs)
+  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask_wtf/form.py", line 88, in __init__
+    super(FlaskForm, self).__init__(formdata=formdata, **kwargs)
+  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/wtforms/form.py", line 272, in __init__
+    super(Form, self).__init__(self._unbound_fields, meta=meta_obj, prefix=prefix)
+  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/wtforms/form.py", line 52, in __init__
+    field = meta.bind_field(self, unbound_field, options)
+  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/wtforms/meta.py", line 27, in bind_field
+    return unbound_field.bind(form=form, **options)
+  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/wtforms/fields/core.py", line 350, in bind
+    return self.field_class(*self.args, **kw)
+TypeError: __init__() got an unexpected keyword argument 'nullable'
+2018-02-07 14:42:32,697 INFO: Microblog startup [in /home/jb/git_local/path_chat/app/__init__.py:52]
+2018-02-07 14:47:17,478 INFO: Microblog startup [in /home/jb/git_local/path_chat/app/__init__.py:52]
+2018-02-07 14:47:29,898 ERROR: Exception on /index [GET] [in /home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask/app.py:1560]
 Traceback (most recent call last):
   File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask/app.py", line 1982, in wsgi_app
     response = self.full_dispatch_request()
@@ -14,78 +57,13 @@ Traceback (most recent call last):
     return self.view_functions[rule.endpoint](**req.view_args)
   File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask_login/utils.py", line 261, in decorated_view
     return func(*args, **kwargs)
-TypeError: user() missing 1 required positional argument: 'username'
-2018-02-07 20:43:20,063 INFO: Microblog startup [in /home/jb/git_local/path_chat/app/__init__.py:52]
-2018-02-07 20:43:22,561 ERROR: Exception on /user [GET] [in /home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask/app.py:1560]
-Traceback (most recent call last):
-  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask/app.py", line 1982, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask/app.py", line 1614, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask/app.py", line 1517, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask/_compat.py", line 33, in reraise
-    raise value
-  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask/app.py", line 1612, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask/app.py", line 1598, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask_login/utils.py", line 261, in decorated_view
-    return func(*args, **kwargs)
-  File "/home/jb/git_local/path_chat/app/routes.py", line 144, in user
-    posts = user.posts.order_by(Post.timestamp.desc()).paginate(
+  File "/home/jb/git_local/path_chat/app/routes.py", line 37, in index
+    posts = current_user.followed_posts().paginate(
   File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/werkzeug/local.py", line 347, in __getattr__
     return getattr(self._get_current_object(), name)
-AttributeError: 'User' object has no attribute 'posts'
-2018-02-07 20:43:58,636 INFO: Microblog startup [in /home/jb/git_local/path_chat/app/__init__.py:52]
-2018-02-07 20:45:00,599 INFO: Microblog startup [in /home/jb/git_local/path_chat/app/__init__.py:52]
-2018-02-07 20:46:36,574 INFO: Microblog startup [in /home/jb/git_local/path_chat/app/__init__.py:52]
-2018-02-07 20:46:42,765 ERROR: Exception on /edit_profile [GET] [in /home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask/app.py:1560]
-Traceback (most recent call last):
-  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask/app.py", line 1982, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask/app.py", line 1614, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask/app.py", line 1517, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask/_compat.py", line 33, in reraise
-    raise value
-  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask/app.py", line 1612, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask/app.py", line 1598, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask_login/utils.py", line 261, in decorated_view
-    return func(*args, **kwargs)
-  File "/home/jb/git_local/path_chat/app/routes.py", line 148, in edit_profile
-    form = EditProfileForm(current_user.username)
-  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/werkzeug/local.py", line 347, in __getattr__
-    return getattr(self._get_current_object(), name)
-AttributeError: 'User' object has no attribute 'username'
-2018-02-07 20:59:39,683 INFO: Microblog startup [in /home/jb/git_local/path_chat/app/__init__.py:52]
-2018-02-07 20:59:46,965 ERROR: Exception on /edit_profile [GET] [in /home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask/app.py:1560]
-Traceback (most recent call last):
-  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask/app.py", line 1982, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask/app.py", line 1614, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask/app.py", line 1517, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask/_compat.py", line 33, in reraise
-    raise value
-  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask/app.py", line 1612, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask/app.py", line 1598, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask_login/utils.py", line 261, in decorated_view
-    return func(*args, **kwargs)
-  File "/home/jb/git_local/path_chat/app/routes.py", line 157, in edit_profile
-    form.username.data = current_user.username
-  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/werkzeug/local.py", line 347, in __getattr__
-    return getattr(self._get_current_object(), name)
-AttributeError: 'User' object has no attribute 'username'
-2018-02-07 21:01:48,995 INFO: Microblog startup [in /home/jb/git_local/path_chat/app/__init__.py:52]
-2018-02-12 17:13:10,891 INFO: Microblog startup [in /home/jb/git_local/path_chat/app/__init__.py:52]
-2018-02-12 17:13:35,832 ERROR: Exception on / [GET] [in /home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask/app.py:1560]
+AttributeError: 'User' object has no attribute 'followed_posts'
+2018-02-07 15:02:13,950 INFO: Microblog startup [in /home/jb/git_local/path_chat/app/__init__.py:52]
+2018-02-07 15:02:17,714 ERROR: Exception on /index [GET] [in /home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask/app.py:1560]
 Traceback (most recent call last):
   File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask/app.py", line 1982, in wsgi_app
     response = self.full_dispatch_request()
@@ -104,7 +82,41 @@ Traceback (most recent call last):
   File "/home/jb/git_local/path_chat/app/routes.py", line 42, in index
     if posts.has_next else None
 NameError: name 'posts' is not defined
-2018-02-12 17:30:28,892 INFO: Microblog startup [in /home/jb/git_local/path_chat/app/__init__.py:52]
-2018-02-12 17:35:48,046 INFO: Microblog startup [in /home/jb/git_local/path_chat/app/__init__.py:52]
-2018-02-12 18:25:35,121 INFO: Microblog startup [in /home/jb/git_local/path_chat/app/__init__.py:52]
-2018-02-12 20:08:22,728 INFO: Microblog startup [in /home/jb/git_local/path_chat/app/__init__.py:52]
+2018-02-07 15:02:19,627 ERROR: Exception on /index [GET] [in /home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask/app.py:1560]
+Traceback (most recent call last):
+  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask/app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask/app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask_login/utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "/home/jb/git_local/path_chat/app/routes.py", line 42, in index
+    if posts.has_next else None
+NameError: name 'posts' is not defined
+2018-02-07 15:02:28,456 ERROR: Exception on /index [GET] [in /home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask/app.py:1560]
+Traceback (most recent call last):
+  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask/app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask/app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask_login/utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "/home/jb/git_local/path_chat/app/routes.py", line 42, in index
+    if posts.has_next else None
+NameError: name 'posts' is not defined

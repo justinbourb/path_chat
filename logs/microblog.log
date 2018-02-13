@@ -1,4 +1,4 @@
-2018-02-07 20:42:55,041 ERROR: Exception on /user [GET] [in /home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask/app.py:1560]
+2018-02-12 21:12:26,384 ERROR: Exception on /edit_profile [POST] [in /home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask/app.py:1560]
 Traceback (most recent call last):
   File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask/app.py", line 1982, in wsgi_app
     response = self.full_dispatch_request()
@@ -14,9 +14,23 @@ Traceback (most recent call last):
     return self.view_functions[rule.endpoint](**req.view_args)
   File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask_login/utils.py", line 261, in decorated_view
     return func(*args, **kwargs)
-TypeError: user() missing 1 required positional argument: 'username'
-2018-02-07 20:43:20,063 INFO: Microblog startup [in /home/jb/git_local/path_chat/app/__init__.py:52]
-2018-02-07 20:43:22,561 ERROR: Exception on /user [GET] [in /home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask/app.py:1560]
+  File "/home/jb/git_local/path_chat/app/routes.py", line 132, in edit_profile
+    if form.validate_on_submit():
+  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask_wtf/form.py", line 101, in validate_on_submit
+    return self.is_submitted() and self.validate()
+  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/wtforms/form.py", line 310, in validate
+    return super(Form, self).validate(extra)
+  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/wtforms/form.py", line 152, in validate
+    if not field.validate(self, extra):
+  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/wtforms/fields/core.py", line 204, in validate
+    stop_validation = self._run_validation_chain(form, chain)
+  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/wtforms/fields/core.py", line 224, in _run_validation_chain
+    validator(form, self)
+  File "/home/jb/git_local/path_chat/app/forms.py", line 77, in validate_password
+    if not current_user.check_password(form.password.data):
+NameError: name 'current_user' is not defined
+2018-02-12 21:15:15,465 INFO: Microblog startup [in /home/jb/git_local/path_chat/app/__init__.py:52]
+2018-02-12 21:15:28,463 ERROR: Exception on /edit_profile [POST] [in /home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask/app.py:1560]
 Traceback (most recent call last):
   File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask/app.py", line 1982, in wsgi_app
     response = self.full_dispatch_request()
@@ -32,55 +46,18 @@ Traceback (most recent call last):
     return self.view_functions[rule.endpoint](**req.view_args)
   File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask_login/utils.py", line 261, in decorated_view
     return func(*args, **kwargs)
-  File "/home/jb/git_local/path_chat/app/routes.py", line 144, in user
-    posts = user.posts.order_by(Post.timestamp.desc()).paginate(
-  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/werkzeug/local.py", line 347, in __getattr__
-    return getattr(self._get_current_object(), name)
-AttributeError: 'User' object has no attribute 'posts'
-2018-02-07 20:43:58,636 INFO: Microblog startup [in /home/jb/git_local/path_chat/app/__init__.py:52]
-2018-02-07 20:45:00,599 INFO: Microblog startup [in /home/jb/git_local/path_chat/app/__init__.py:52]
-2018-02-07 20:46:36,574 INFO: Microblog startup [in /home/jb/git_local/path_chat/app/__init__.py:52]
-2018-02-07 20:46:42,765 ERROR: Exception on /edit_profile [GET] [in /home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask/app.py:1560]
-Traceback (most recent call last):
-  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask/app.py", line 1982, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask/app.py", line 1614, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask/app.py", line 1517, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask/_compat.py", line 33, in reraise
-    raise value
-  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask/app.py", line 1612, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask/app.py", line 1598, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask_login/utils.py", line 261, in decorated_view
-    return func(*args, **kwargs)
-  File "/home/jb/git_local/path_chat/app/routes.py", line 148, in edit_profile
-    form = EditProfileForm(current_user.username)
-  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/werkzeug/local.py", line 347, in __getattr__
-    return getattr(self._get_current_object(), name)
-AttributeError: 'User' object has no attribute 'username'
-2018-02-07 20:59:39,683 INFO: Microblog startup [in /home/jb/git_local/path_chat/app/__init__.py:52]
-2018-02-07 20:59:46,965 ERROR: Exception on /edit_profile [GET] [in /home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask/app.py:1560]
-Traceback (most recent call last):
-  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask/app.py", line 1982, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask/app.py", line 1614, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask/app.py", line 1517, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask/_compat.py", line 33, in reraise
-    raise value
-  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask/app.py", line 1612, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask/app.py", line 1598, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask_login/utils.py", line 261, in decorated_view
-    return func(*args, **kwargs)
-  File "/home/jb/git_local/path_chat/app/routes.py", line 157, in edit_profile
-    form.username.data = current_user.username
-  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/werkzeug/local.py", line 347, in __getattr__
-    return getattr(self._get_current_object(), name)
-AttributeError: 'User' object has no attribute 'username'
-2018-02-07 21:01:48,995 INFO: Microblog startup [in /home/jb/git_local/path_chat/app/__init__.py:52]
+  File "/home/jb/git_local/path_chat/app/routes.py", line 132, in edit_profile
+    if form.validate_on_submit():
+  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask_wtf/form.py", line 101, in validate_on_submit
+    return self.is_submitted() and self.validate()
+  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/wtforms/form.py", line 310, in validate
+    return super(Form, self).validate(extra)
+  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/wtforms/form.py", line 152, in validate
+    if not field.validate(self, extra):
+  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/wtforms/fields/core.py", line 204, in validate
+    stop_validation = self._run_validation_chain(form, chain)
+  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/wtforms/fields/core.py", line 224, in _run_validation_chain
+    validator(form, self)
+  File "/home/jb/git_local/path_chat/app/forms.py", line 77, in validate_password
+    if not self.current_user.check_password(form.password.data):
+AttributeError: 'PasswordField' object has no attribute 'current_user'

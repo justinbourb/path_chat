@@ -28,7 +28,7 @@ class RegistrationForm(FlaskForm):
     state = StringField(_l('State'), validators=[DataRequired()])
     zipcode = StringField(_l('Zipcode'), validators=[DataRequired()])
     telephone = StringField(_l('Telephone'), validators=[DataRequired()])
-    submit = SubmitField(_l('Register'))
+    submit = SubmitField(_l('Submit'))
 
     ''' not in use
     def validate_username(self, username):
@@ -57,20 +57,29 @@ class ResetPasswordForm(FlaskForm):
 
 
 class EditProfileForm(FlaskForm):
-    username = StringField(_l('Username'), validators=[DataRequired()])
-    about_me = TextAreaField(_l('About me'),
-                             validators=[Length(min=0, max=140)])
+    first_name = StringField(_l('First Name'), validators=[DataRequired()])
+    last_name = StringField(_l('Last Name'), validators=[DataRequired()])
+    email = StringField(_l('Email'), validators=[DataRequired(), Email()])
+    password = PasswordField(_l('Current Password'), validators=[DataRequired()])
+    new_password = PasswordField(_l('New Password'), validators=[DataRequired()])
+    new_password2 = PasswordField(
+        _l('Repeat New Password'), validators=[DataRequired(),
+                                           EqualTo('new_password')])
+    address_1 = StringField(_l('Address 1'), validators=[DataRequired()])
+    address_2 = StringField(_l('Address 2'), validators=[DataRequired()])
+    city = StringField(_l('City'), validators=[DataRequired()])
+    state = StringField(_l('State'), validators=[DataRequired()])
+    zipcode = StringField(_l('Zipcode'), validators=[DataRequired()])
+    telephone = StringField(_l('Telephone'), validators=[DataRequired()])
     submit = SubmitField(_l('Submit'))
 
-    def __init__(self, original_username, *args, **kwargs):
-        super(EditProfileForm, self).__init__(*args, **kwargs)
-        self.original_username = original_username
-
-    def validate_username(self, username):
-        if username.data != self.original_username:
-            user = User.query.filter_by(username=self.username.data).first()
-            if user is not None:
-                raise ValidationError(_('Please use a different username.'))
+#TODO: validate current password is correct before changing
+#to new profile.  Or any other info?  How do other websites
+#do this??
+#TODO: split edit password and edit profile into separat pages
+    def validate_password(form, self):
+        if not current_user.check_password(form.password.data):
+            flash(_('Invalid current password, please try again.'))
 
 
 class PostForm(FlaskForm):

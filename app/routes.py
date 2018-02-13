@@ -23,28 +23,8 @@ def before_request():
 @app.route('/index', methods=['GET', 'POST'])
 @login_required
 def index():
-    form = PostForm()
-    if form.validate_on_submit():
-        language = guess_language(form.post.data)
-        if language == 'UNKNOWN' or len(language) > 5:
-            language = ''
-        post = Post(body=form.post.data, author=current_user, language=language)
-        db.session.add(post)
-        db.session.commit()
-        flash(_('Your post is now live!'))
-        return redirect(url_for('index'))
-    page = request.args.get('page', 1, type=int)
-    ''' not in use
-    posts = current_user.followed_posts().paginate(
-        page, app.config['POSTS_PER_PAGE'], False)
-    '''
-    next_url = url_for('explore', page=posts.next_num) \
-        if posts.has_next else None
-    prev_url = url_for('explore', page=posts.prev_num) \
-        if posts.has_prev else None
-    return render_template('index.html', title='Home', form=form,
-                           posts=posts.items, next_url=next_url,
-                           prev_url=prev_url)
+    ''' nothing here yet'''
+    return render_template('index.html', title='Home')
 
 
 @app.route('/explore')
@@ -134,14 +114,21 @@ def reset_password(token):
         return redirect(url_for('login'))
     return render_template('reset_password.html', form=form)
 
-#TODO: change submit button to "update profile"
-#TODO: prefill exists values on the edit profile page
-#TODO: remove the elif statement or make it make sense
 @app.route('/edit_profile', methods=['GET', 'POST'])
 @login_required
 def edit_profile():
     """allows users to update info / edit profile"""
-    form = RegistrationForm()
+    form = EditProfileForm()
+    form.first_name.data = current_user.first_name
+    form.first_name.data = current_user.first_name
+    form.last_name.data = current_user.last_name
+    form.email.data = current_user.email
+    form.address_1.data = current_user.address_1
+    form.address_2.data = current_user.address_2
+    form.city.data = current_user.city
+    form.state.data = current_user.state
+    form.zipcode.data = current_user.zipcode
+    form.telephone.data = current_user.telephone
     if form.validate_on_submit():
         current_user.set_password(form.password.data)
         current_user.first_name = form.first_name.data
@@ -156,8 +143,7 @@ def edit_profile():
         db.session.commit()
         flash(_('Your changes have been saved.'))
         return redirect(url_for('edit_profile'))
-    elif request.method == 'GET':
-        flash(_('Something went wrong.'))
+
     return render_template('edit_profile.html', title=_('Edit Profile'),
                            form=form)
 
