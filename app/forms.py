@@ -5,6 +5,7 @@ from wtforms.validators import ValidationError, DataRequired, Email, EqualTo, \
     Length
 from flask_babel import _, lazy_gettext as _l
 from app.models import User
+from flask_login import current_user
 
 
 class LoginForm(FlaskForm):
@@ -55,16 +56,23 @@ class ResetPasswordForm(FlaskForm):
                                            EqualTo('password')])
     submit = SubmitField(_l('Request Password Reset'))
 
+class ChangePasswordForm(FlaskForm):
+    current_password = PasswordField(_l('Current Password'), validators=[DataRequired()])
+    new_password = PasswordField(_l('New Password'), validators=[DataRequired()])
+    new_password2 = PasswordField(
+        _l('Repeat New Password'), validators=[DataRequired(),
+                                           EqualTo('new_password')])
+    submit = SubmitField(_l('Change Password'))
+
+    def validate_current_password(self, current_password):
+        if not current_user.check_password(current_password.data):
+            raise ValidationError(_('Invalid current password, please try again.'))
+
 
 class EditProfileForm(FlaskForm):
     first_name = StringField(_l('First Name'), validators=[DataRequired()])
     last_name = StringField(_l('Last Name'), validators=[DataRequired()])
     email = StringField(_l('Email'), validators=[DataRequired(), Email()])
-    password = PasswordField(_l('Current Password'), validators=[DataRequired()])
-    new_password = PasswordField(_l('New Password'), validators=[DataRequired()])
-    new_password2 = PasswordField(
-        _l('Repeat New Password'), validators=[DataRequired(),
-                                           EqualTo('new_password')])
     address_1 = StringField(_l('Address 1'), validators=[DataRequired()])
     address_2 = StringField(_l('Address 2'), validators=[DataRequired()])
     city = StringField(_l('City'), validators=[DataRequired()])
@@ -72,15 +80,6 @@ class EditProfileForm(FlaskForm):
     zipcode = StringField(_l('Zipcode'), validators=[DataRequired()])
     telephone = StringField(_l('Telephone'), validators=[DataRequired()])
     submit = SubmitField(_l('Submit'))
-
-#TODO: validate current password is correct before changing
-#to new profile.  Or any other info?  How do other websites
-#do this??
-#TODO: split edit password and edit profile into separat pages
-    def validate_password(form, self):
-        if not current_user.check_password(form.password.data):
-            flash(_('Invalid current password, please try again.'))
-
 
 class PostForm(FlaskForm):
     post = TextAreaField(_l('Say something'), validators=[DataRequired()])

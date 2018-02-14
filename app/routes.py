@@ -5,7 +5,7 @@ from werkzeug.urls import url_parse
 from flask_babel import _, get_locale
 from app import app, db
 from app.forms import LoginForm, RegistrationForm, EditProfileForm, PostForm, \
-    ResetPasswordRequestForm, ResetPasswordForm
+    ResetPasswordRequestForm, ResetPasswordForm, ChangePasswordForm
 from app.models import User, Post
 from app.email import send_password_reset_email
 from guess_language import guess_language
@@ -113,6 +113,17 @@ def reset_password(token):
         flash(_('Your password has been reset.'))
         return redirect(url_for('login'))
     return render_template('reset_password.html', form=form)
+
+@app.route('/change_password', methods=['GET', 'POST'])
+@login_required
+def change_password():
+    form = ChangePasswordForm()
+    if form.validate_on_submit():
+        current_user.set_password(form.new_password.data)
+        db.session.commit()
+        flash(_('Your password has been changed.'))
+        return redirect(url_for('edit_profile'))
+    return render_template('change_password.html', form=form)
 
 @app.route('/edit_profile', methods=['GET', 'POST'])
 @login_required

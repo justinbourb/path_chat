@@ -8,6 +8,11 @@
       <p>Our site uses Gravatar, you can visit
         <a href="https://en.gravatar.com/" target="_blank">their site</a>
         to set one up if you like.</p>
+      <br>
+      <!-- create a button that's a link -->
+      <form method="GET" action="{{ url_for('change_password') }}">
+        <input type="submit" value="Change your password">
+      </form>
     </div>
     <div class="row">
         <div class="col-md-4">
