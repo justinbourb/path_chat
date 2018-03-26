@@ -1,96 +1,86 @@
-2018-02-12 20:38:05,126 ERROR: Exception on /edit_profile [GET] [in /home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask/app.py:1560]
+2018-03-12 22:26:50,509 ERROR: Exception on /socket.io/ [GET] [in /home/a/.virtualenvs/flask_mega_tutorial/local/lib/python2.7/site-packages/flask/app.py:1560]
 Traceback (most recent call last):
-  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask/app.py", line 1982, in wsgi_app
+  File "/home/a/.virtualenvs/flask_mega_tutorial/local/lib/python2.7/site-packages/flask/app.py", line 1982, in wsgi_app
     response = self.full_dispatch_request()
-  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask/app.py", line 1614, in full_dispatch_request
+  File "/home/a/.virtualenvs/flask_mega_tutorial/local/lib/python2.7/site-packages/flask/app.py", line 1614, in full_dispatch_request
     rv = self.handle_user_exception(e)
-  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask/app.py", line 1517, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask/_compat.py", line 33, in reraise
-    raise value
-  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask/app.py", line 1612, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask/app.py", line 1598, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask_login/utils.py", line 261, in decorated_view
-    return func(*args, **kwargs)
-  File "/home/jb/git_local/path_chat/app/routes.py", line 151, in edit_profile
-    form=form)
-  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask/templating.py", line 134, in render_template
+  File "/home/a/.virtualenvs/flask_mega_tutorial/local/lib/python2.7/site-packages/flask/app.py", line 1512, in handle_user_exception
+    return self.handle_http_exception(e)
+  File "/home/a/.virtualenvs/flask_mega_tutorial/local/lib/python2.7/site-packages/flask/app.py", line 1471, in handle_http_exception
+    return handler(e)
+  File "/home/a/git_local/path_chat/app/errors.py", line 7, in not_found_error
+    return render_template('404.html'), 404
+  File "/home/a/.virtualenvs/flask_mega_tutorial/local/lib/python2.7/site-packages/flask/templating.py", line 134, in render_template
     context, ctx.app)
-  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask/templating.py", line 116, in _render
+  File "/home/a/.virtualenvs/flask_mega_tutorial/local/lib/python2.7/site-packages/flask/templating.py", line 116, in _render
     rv = template.render(context)
-  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/jinja2/environment.py", line 1008, in render
+  File "/home/a/.virtualenvs/flask_mega_tutorial/local/lib/python2.7/site-packages/jinja2/environment.py", line 1008, in render
     return self.environment.handle_exception(exc_info, True)
-  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/jinja2/environment.py", line 780, in handle_exception
+  File "/home/a/.virtualenvs/flask_mega_tutorial/local/lib/python2.7/site-packages/jinja2/environment.py", line 780, in handle_exception
     reraise(exc_type, exc_value, tb)
-  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/jinja2/_compat.py", line 37, in reraise
-    raise value.with_traceback(tb)
-  File "/home/jb/git_local/path_chat/app/templates/edit_profile.html", line 2, in top-level template code
-    {% import 'bootstrap/wtf.html' as wtf %}
-  File "/home/jb/git_local/path_chat/app/templates/base.html", line 1, in top-level template code
+  File "/home/a/git_local/path_chat/app/templates/404.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "/home/a/git_local/path_chat/app/templates/base.html", line 1, in top-level template code
     {% extends 'bootstrap/base.html' %}
-  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 1, in top-level template code
+  File "/home/a/.virtualenvs/flask_mega_tutorial/local/lib/python2.7/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 1, in top-level template code
     {% block doc -%}
-  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 4, in block "doc"
+  File "/home/a/.virtualenvs/flask_mega_tutorial/local/lib/python2.7/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 4, in block "doc"
     {%- block html %}
-  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 20, in block "html"
+  File "/home/a/.virtualenvs/flask_mega_tutorial/local/lib/python2.7/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 20, in block "html"
     {% block body -%}
-  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 23, in block "body"
-    {% block content -%}
-  File "/home/jb/git_local/path_chat/app/templates/base.html", line 48, in block "content"
-    {% block app_content %}{% endblock %}
-  File "/home/jb/git_local/path_chat/app/templates/edit_profile.html", line 6, in block "app_content"
-    <td width="256px"><img src="{{ user.avatar(256) }}"></td>
-  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/jinja2/environment.py", line 430, in getattr
-    return getattr(obj, attribute)
-jinja2.exceptions.UndefinedError: 'user' is undefined
-2018-02-12 20:38:38,961 ERROR: Exception on /edit_profile [GET] [in /home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask/app.py:1560]
+  File "/home/a/.virtualenvs/flask_mega_tutorial/local/lib/python2.7/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 21, in block "body"
+    {% block navbar %}
+  File "/home/a/git_local/path_chat/app/templates/base.html", line 23, in block "navbar"
+    <li><a href="{{ url_for('chat') }}">{{ _('Chat') }}</a></li>
+  File "/home/a/.virtualenvs/flask_mega_tutorial/local/lib/python2.7/site-packages/flask/helpers.py", line 333, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "/home/a/.virtualenvs/flask_mega_tutorial/local/lib/python2.7/site-packages/flask/app.py", line 1805, in handle_url_build_error
+    reraise(exc_type, exc_value, tb)
+  File "/home/a/.virtualenvs/flask_mega_tutorial/local/lib/python2.7/site-packages/flask/helpers.py", line 323, in url_for
+    force_external=external)
+  File "/home/a/.virtualenvs/flask_mega_tutorial/local/lib/python2.7/site-packages/werkzeug/routing.py", line 1776, in build
+    raise BuildError(endpoint, values, method, self)
+BuildError: Could not build url for endpoint 'chat'. Did you mean 'chat.chat' instead?
+2018-03-12 22:26:52,722 ERROR: Exception on /socket.io/ [GET] [in /home/a/.virtualenvs/flask_mega_tutorial/local/lib/python2.7/site-packages/flask/app.py:1560]
 Traceback (most recent call last):
-  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask/app.py", line 1982, in wsgi_app
+  File "/home/a/.virtualenvs/flask_mega_tutorial/local/lib/python2.7/site-packages/flask/app.py", line 1982, in wsgi_app
     response = self.full_dispatch_request()
-  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask/app.py", line 1614, in full_dispatch_request
+  File "/home/a/.virtualenvs/flask_mega_tutorial/local/lib/python2.7/site-packages/flask/app.py", line 1614, in full_dispatch_request
     rv = self.handle_user_exception(e)
-  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask/app.py", line 1517, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask/_compat.py", line 33, in reraise
-    raise value
-  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask/app.py", line 1612, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask/app.py", line 1598, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask_login/utils.py", line 261, in decorated_view
-    return func(*args, **kwargs)
-  File "/home/jb/git_local/path_chat/app/routes.py", line 151, in edit_profile
-    form=form)
-  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask/templating.py", line 134, in render_template
+  File "/home/a/.virtualenvs/flask_mega_tutorial/local/lib/python2.7/site-packages/flask/app.py", line 1512, in handle_user_exception
+    return self.handle_http_exception(e)
+  File "/home/a/.virtualenvs/flask_mega_tutorial/local/lib/python2.7/site-packages/flask/app.py", line 1471, in handle_http_exception
+    return handler(e)
+  File "/home/a/git_local/path_chat/app/errors.py", line 7, in not_found_error
+    return render_template('404.html'), 404
+  File "/home/a/.virtualenvs/flask_mega_tutorial/local/lib/python2.7/site-packages/flask/templating.py", line 134, in render_template
     context, ctx.app)
-  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask/templating.py", line 116, in _render
+  File "/home/a/.virtualenvs/flask_mega_tutorial/local/lib/python2.7/site-packages/flask/templating.py", line 116, in _render
     rv = template.render(context)
-  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/jinja2/environment.py", line 1008, in render
+  File "/home/a/.virtualenvs/flask_mega_tutorial/local/lib/python2.7/site-packages/jinja2/environment.py", line 1008, in render
     return self.environment.handle_exception(exc_info, True)
-  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/jinja2/environment.py", line 780, in handle_exception
+  File "/home/a/.virtualenvs/flask_mega_tutorial/local/lib/python2.7/site-packages/jinja2/environment.py", line 780, in handle_exception
     reraise(exc_type, exc_value, tb)
-  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/jinja2/_compat.py", line 37, in reraise
-    raise value.with_traceback(tb)
-  File "/home/jb/git_local/path_chat/app/templates/edit_profile.html", line 2, in top-level template code
-    {% import 'bootstrap/wtf.html' as wtf %}
-  File "/home/jb/git_local/path_chat/app/templates/base.html", line 1, in top-level template code
+  File "/home/a/git_local/path_chat/app/templates/404.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "/home/a/git_local/path_chat/app/templates/base.html", line 1, in top-level template code
     {% extends 'bootstrap/base.html' %}
-  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 1, in top-level template code
+  File "/home/a/.virtualenvs/flask_mega_tutorial/local/lib/python2.7/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 1, in top-level template code
     {% block doc -%}
-  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 4, in block "doc"
+  File "/home/a/.virtualenvs/flask_mega_tutorial/local/lib/python2.7/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 4, in block "doc"
     {%- block html %}
-  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 20, in block "html"
+  File "/home/a/.virtualenvs/flask_mega_tutorial/local/lib/python2.7/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 20, in block "html"
     {% block body -%}
-  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 23, in block "body"
-    {% block content -%}
-  File "/home/jb/git_local/path_chat/app/templates/base.html", line 48, in block "content"
-    {% block app_content %}{% endblock %}
-  File "/home/jb/git_local/path_chat/app/templates/edit_profile.html", line 6, in block "app_content"
-    <td width="256px"><img src="{{ current_user.avatar(256) }}"></td>
-  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/jinja2/environment.py", line 430, in getattr
-    return getattr(obj, attribute)
-jinja2.exceptions.UndefinedError: 'user' is undefined
-2018-02-12 20:38:43,916 INFO: Microblog startup [in /home/jb/git_local/path_chat/app/__init__.py:52]
-2018-02-12 20:42:07,002 INFO: Microblog startup [in /home/jb/git_local/path_chat/app/__init__.py:52]
+  File "/home/a/.virtualenvs/flask_mega_tutorial/local/lib/python2.7/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 21, in block "body"
+    {% block navbar %}
+  File "/home/a/git_local/path_chat/app/templates/base.html", line 23, in block "navbar"
+    <li><a href="{{ url_for('chat') }}">{{ _('Chat') }}</a></li>
+  File "/home/a/.virtualenvs/flask_mega_tutorial/local/lib/python2.7/site-packages/flask/helpers.py", line 333, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "/home/a/.virtualenvs/flask_mega_tutorial/local/lib/python2.7/site-packages/flask/app.py", line 1805, in handle_url_build_error
+    reraise(exc_type, exc_value, tb)
+  File "/home/a/.virtualenvs/flask_mega_tutorial/local/lib/python2.7/site-packages/flask/helpers.py", line 323, in url_for
+    force_external=external)
+  File "/home/a/.virtualenvs/flask_mega_tutorial/local/lib/python2.7/site-packages/werkzeug/routing.py", line 1776, in build
+    raise BuildError(endpoint, values, method, self)
+BuildError: Could not build url for endpoint 'chat'. Did you mean 'chat.chat' instead?

@@ -2,6 +2,24 @@
 {% import 'bootstrap/wtf.html' as wtf %}
 
 {% block app_content %}
+<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/index.css') }}">
+<div id="container">
+
+    <!-- Each image is 350px by 233px -->
+    <div class="photobanner">
+    	<img class="first" src="static/images/AB.jpg" alt="AB broken" style="width:350px;height:233px;" >
+    	<img src="static/images/Giemsa.jpeg" alt="Giemsa broken" style="width:350px;height:233px;">
+    	<img src="static/images/GMS.jpg" alt="GMS broken" style="width:350px;height:233px;">
+    	<img src="static/images/HE.jpg" alt="HE broken" style="width:350px;height:233px;">
+    	<img src="static/images/PAS.jpg" alt="PAS broken" style="width:350px;height:233px;">
+    	<!-- <img src="static/images/Tri.jpg" alt="Tri broken" style="width:350px;height:233px;"> -->
+      <img src="static/images/WS.jpg" alt="WS broken" style="width:350px;height:233px;">
+    	<img src="static/images/AB.jpg" alt="AB broken" style="width:350px;height:233px;">
+    	<img src="static/images/Giemsa.jpeg" alt="Giemsa broken" style="width:350px;height:233px;">
+    	<img src="static/images/GMS.jpg" alt="GMS broken" style="width:350px;height:233px;">
+    	<img src="static/images/HE.jpg" alt="HE broken" style="width:350px;height:233px;">
+    </div>
+</div>
     <h1>{{ _('Hi, %(username)s!', username=current_user.first_name|capitalize+' '+current_user.last_name|capitalize) }}</h1>
     <br>
     <br>

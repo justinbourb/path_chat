@@ -1,108 +1,58 @@
-2018-02-13 18:57:00,797 ERROR: Exception on /change_password [POST] [in /home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask/app.py:1560]
+2018-03-12 22:33:11,980 ERROR: Exception on /chat [GET] [in /home/a/.virtualenvs/flask_mega_tutorial/local/lib/python2.7/site-packages/flask/app.py:1560]
 Traceback (most recent call last):
-  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask/app.py", line 1982, in wsgi_app
+  File "/home/a/.virtualenvs/flask_mega_tutorial/local/lib/python2.7/site-packages/flask/app.py", line 1982, in wsgi_app
     response = self.full_dispatch_request()
-  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask/app.py", line 1614, in full_dispatch_request
+  File "/home/a/.virtualenvs/flask_mega_tutorial/local/lib/python2.7/site-packages/flask/app.py", line 1614, in full_dispatch_request
     rv = self.handle_user_exception(e)
-  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask/app.py", line 1517, in handle_user_exception
+  File "/home/a/.virtualenvs/flask_mega_tutorial/local/lib/python2.7/site-packages/flask/app.py", line 1517, in handle_user_exception
     reraise(exc_type, exc_value, tb)
-  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask/_compat.py", line 33, in reraise
-    raise value
-  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask/app.py", line 1612, in full_dispatch_request
+  File "/home/a/.virtualenvs/flask_mega_tutorial/local/lib/python2.7/site-packages/flask/app.py", line 1612, in full_dispatch_request
     rv = self.dispatch_request()
-  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask/app.py", line 1598, in dispatch_request
+  File "/home/a/.virtualenvs/flask_mega_tutorial/local/lib/python2.7/site-packages/flask/app.py", line 1598, in dispatch_request
     return self.view_functions[rule.endpoint](**req.view_args)
-  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask_login/utils.py", line 261, in decorated_view
-    return func(*args, **kwargs)
-  File "/home/jb/git_local/path_chat/app/routes.py", line 121, in change_password
-    if form.validate_on_submit():
-  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask_wtf/form.py", line 101, in validate_on_submit
-    return self.is_submitted() and self.validate()
-  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/wtforms/form.py", line 310, in validate
-    return super(Form, self).validate(extra)
-  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/wtforms/form.py", line 152, in validate
-    if not field.validate(self, extra):
-  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/wtforms/fields/core.py", line 204, in validate
-    stop_validation = self._run_validation_chain(form, chain)
-  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/wtforms/fields/core.py", line 224, in _run_validation_chain
-    validator(form, self)
-  File "/home/jb/git_local/path_chat/app/forms.py", line 68, in validate_current_password
-    if not current_user.check_password(form.curret_password.data):
-NameError: name 'form' is not defined
-2018-02-13 18:58:15,560 INFO: Microblog startup [in /home/jb/git_local/path_chat/app/__init__.py:52]
-2018-02-13 18:58:27,926 ERROR: Exception on /change_password [POST] [in /home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask/app.py:1560]
-Traceback (most recent call last):
-  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask/app.py", line 1982, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask/app.py", line 1614, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask/app.py", line 1517, in handle_user_exception
+  File "/home/a/git_local/path_chat/app/chat/app.py", line 37, in chat
+    return render_template('websocket_chat.html', async_mode=socketio.async_mode)
+  File "/home/a/.virtualenvs/flask_mega_tutorial/local/lib/python2.7/site-packages/flask/templating.py", line 134, in render_template
+    context, ctx.app)
+  File "/home/a/.virtualenvs/flask_mega_tutorial/local/lib/python2.7/site-packages/flask/templating.py", line 116, in _render
+    rv = template.render(context)
+  File "/home/a/.virtualenvs/flask_mega_tutorial/local/lib/python2.7/site-packages/jinja2/environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "/home/a/.virtualenvs/flask_mega_tutorial/local/lib/python2.7/site-packages/jinja2/environment.py", line 780, in handle_exception
     reraise(exc_type, exc_value, tb)
-  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask/_compat.py", line 33, in reraise
-    raise value
-  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask/app.py", line 1612, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask/app.py", line 1598, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask_login/utils.py", line 261, in decorated_view
-    return func(*args, **kwargs)
-  File "/home/jb/git_local/path_chat/app/routes.py", line 121, in change_password
-    if form.validate_on_submit():
-  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask_wtf/form.py", line 101, in validate_on_submit
-    return self.is_submitted() and self.validate()
-  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/wtforms/form.py", line 310, in validate
-    return super(Form, self).validate(extra)
-  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/wtforms/form.py", line 152, in validate
-    if not field.validate(self, extra):
-  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/wtforms/fields/core.py", line 204, in validate
-    stop_validation = self._run_validation_chain(form, chain)
-  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/wtforms/fields/core.py", line 224, in _run_validation_chain
-    validator(form, self)
-  File "/home/jb/git_local/path_chat/app/forms.py", line 68, in validate_current_password
-    if not current_user.check_password(curret_password.data):
-NameError: name 'curret_password' is not defined
-2018-02-13 18:58:57,982 INFO: Microblog startup [in /home/jb/git_local/path_chat/app/__init__.py:52]
-2018-02-13 18:59:08,574 ERROR: Exception on /change_password [POST] [in /home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask/app.py:1560]
-Traceback (most recent call last):
-  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask/app.py", line 1982, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask/app.py", line 1614, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask/app.py", line 1517, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask/_compat.py", line 33, in reraise
-    raise value
-  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask/app.py", line 1612, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask/app.py", line 1598, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask_login/utils.py", line 261, in decorated_view
-    return func(*args, **kwargs)
-  File "/home/jb/git_local/path_chat/app/routes.py", line 121, in change_password
-    if form.validate_on_submit():
-  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/flask_wtf/form.py", line 101, in validate_on_submit
-    return self.is_submitted() and self.validate()
-  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/wtforms/form.py", line 310, in validate
-    return super(Form, self).validate(extra)
-  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/wtforms/form.py", line 152, in validate
-    if not field.validate(self, extra):
-  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/wtforms/fields/core.py", line 204, in validate
-    stop_validation = self._run_validation_chain(form, chain)
-  File "/home/jb/.virtualenvs/flask_mega_tutorial/lib/python3.5/site-packages/wtforms/fields/core.py", line 224, in _run_validation_chain
-    validator(form, self)
-  File "/home/jb/git_local/path_chat/app/forms.py", line 68, in validate_current_password
-    if not current_user.check_password(form.current_password.data):
-NameError: name 'form' is not defined
-2018-02-13 18:59:37,006 INFO: Microblog startup [in /home/jb/git_local/path_chat/app/__init__.py:52]
-2018-02-13 19:02:12,727 INFO: Microblog startup [in /home/jb/git_local/path_chat/app/__init__.py:52]
-2018-02-13 19:05:01,066 INFO: Microblog startup [in /home/jb/git_local/path_chat/app/__init__.py:52]
-2018-02-13 19:11:00,452 INFO: Microblog startup [in /home/jb/git_local/path_chat/app/__init__.py:52]
-2018-02-13 19:11:50,489 INFO: Microblog startup [in /home/jb/git_local/path_chat/app/__init__.py:52]
-2018-02-13 19:12:31,914 INFO: Microblog startup [in /home/jb/git_local/path_chat/app/__init__.py:52]
-2018-02-13 19:13:41,190 INFO: Microblog startup [in /home/jb/git_local/path_chat/app/__init__.py:52]
-2018-02-13 19:18:37,939 INFO: Microblog startup [in /home/jb/git_local/path_chat/app/__init__.py:52]
-2018-02-13 19:19:09,154 INFO: Microblog startup [in /home/jb/git_local/path_chat/app/__init__.py:52]
-2018-02-13 19:19:29,054 INFO: Microblog startup [in /home/jb/git_local/path_chat/app/__init__.py:52]
-2018-02-13 19:21:12,754 INFO: Microblog startup [in /home/jb/git_local/path_chat/app/__init__.py:52]
-2018-02-13 19:21:37,159 INFO: Microblog startup [in /home/jb/git_local/path_chat/app/__init__.py:52]
-2018-02-13 19:22:53,143 INFO: Microblog startup [in /home/jb/git_local/path_chat/app/__init__.py:52]
+  File "/home/a/git_local/path_chat/app/chat/templates/websocket_chat.html", line 1, in top-level template code
+    {% extends "app/templates/base.html" %}
+  File "/home/a/.virtualenvs/flask_mega_tutorial/local/lib/python2.7/site-packages/flask/templating.py", line 57, in get_source
+    return self._get_source_fast(environment, template)
+  File "/home/a/.virtualenvs/flask_mega_tutorial/local/lib/python2.7/site-packages/flask/templating.py", line 85, in _get_source_fast
+    raise TemplateNotFound(template)
+TemplateNotFound: app/templates/base.html
+2018-03-12 22:33:34,487 INFO: Microblog startup [in /home/a/git_local/path_chat/app/__init__.py:56]
+2018-03-12 22:38:00,545 INFO: Microblog startup [in /home/a/git_local/path_chat/app/__init__.py:56]
+2018-03-12 22:38:47,413 INFO: Microblog startup [in /home/a/git_local/path_chat/app/__init__.py:56]
+2018-03-14 21:00:46,714 INFO: Microblog startup [in /home/a/git_local/path_chat/app/__init__.py:56]
+2018-03-14 21:02:06,249 INFO: Microblog startup [in /home/a/git_local/path_chat/app/__init__.py:56]
+2018-03-14 21:02:37,789 INFO: Microblog startup [in /home/a/git_local/path_chat/app/__init__.py:56]
+2018-03-14 21:04:08,170 INFO: Microblog startup [in /home/a/git_local/path_chat/app/__init__.py:56]
+2018-03-14 21:05:20,991 INFO: Microblog startup [in /home/a/git_local/path_chat/app/__init__.py:56]
+2018-03-14 21:06:16,839 INFO: Microblog startup [in /home/a/git_local/path_chat/app/__init__.py:56]
+2018-03-14 21:30:25,527 INFO: Microblog startup [in /home/a/git_local/path_chat/app/__init__.py:56]
+2018-03-15 10:12:45,699 INFO: Microblog startup [in /home/a/git_local/path_chat/app/__init__.py:56]
+2018-03-15 10:50:34,700 INFO: Microblog startup [in /home/a/git_local/path_chat/app/__init__.py:56]
+2018-03-15 10:58:39,692 INFO: Microblog startup [in /home/a/git_local/path_chat/app/__init__.py:56]
+2018-03-15 11:05:49,752 INFO: Microblog startup [in /home/a/git_local/path_chat/app/__init__.py:56]
+2018-03-26 16:46:57,361 INFO: Microblog startup [in /home/a/git_local/path_chat/app/__init__.py:56]
+2018-03-26 16:51:33,007 INFO: Microblog startup [in /home/a/git_local/path_chat/app/__init__.py:56]
+2018-03-26 16:53:33,830 INFO: Microblog startup [in /home/a/git_local/path_chat/app/__init__.py:56]
+2018-03-26 16:57:47,957 INFO: Microblog startup [in /home/a/git_local/path_chat/app/__init__.py:56]
+2018-03-26 17:02:24,771 INFO: Microblog startup [in /home/a/git_local/path_chat/app/__init__.py:56]
+2018-03-26 17:04:37,702 INFO: Microblog startup [in /home/a/git_local/path_chat/app/__init__.py:56]
+2018-03-26 17:06:58,445 INFO: Microblog startup [in /home/a/git_local/path_chat/app/__init__.py:56]
+2018-03-26 17:10:21,831 INFO: Microblog startup [in /home/a/git_local/path_chat/app/__init__.py:56]
+2018-03-26 17:12:57,021 INFO: Microblog startup [in /home/a/git_local/path_chat/app/__init__.py:56]
+2018-03-26 17:15:45,352 INFO: Microblog startup [in /home/a/git_local/path_chat/app/__init__.py:56]
+2018-03-26 17:16:30,621 INFO: Microblog startup [in /home/a/git_local/path_chat/app/__init__.py:56]
+2018-03-26 17:20:21,174 INFO: Microblog startup [in /home/a/git_local/path_chat/app/__init__.py:56]
+2018-03-26 17:21:47,783 INFO: Microblog startup [in /home/a/git_local/path_chat/app/__init__.py:56]
+2018-03-26 17:23:53,131 INFO: Microblog startup [in /home/a/git_local/path_chat/app/__init__.py:56]
+2018-03-26 17:24:26,205 INFO: Microblog startup [in /home/a/git_local/path_chat/app/__init__.py:56]
