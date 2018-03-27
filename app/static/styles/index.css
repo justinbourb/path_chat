@@ -4,8 +4,11 @@
 #container {
  width: 1000px;
  overflow: hidden;
- margin: 50px auto;
- background: white;
+ margin: 10px auto;
+ background: black;
+ border-color: grey;
+ border-style: inset;
+ border-width: 10px;
 }
 
 /*photobanner*/
@@ -19,7 +22,6 @@
 
 .photobanner img {
  -webkit-transition: all 0.5s ease;
- -moz-transition: all 0.5s ease;
  -o-transition: all 0.5s ease;
  -ms-transition: all 0.5s ease;
  transition: all 0.5s ease;
